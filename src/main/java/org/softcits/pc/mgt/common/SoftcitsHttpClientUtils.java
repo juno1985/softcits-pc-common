@@ -107,7 +107,13 @@ public class SoftcitsHttpClientUtils {
 			}
 			// 执行http请求
 			response = httpClient.execute(httpPost);
-			resultString = EntityUtils.toString(response.getEntity(), "utf-8");
+			if (response.getStatusLine().getStatusCode() == 200) {
+				resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
+			}
+			//此处应该抛出自定义异常，并有相应的异常捕获机制，可以参考core模块
+			else {
+				resultString = null;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

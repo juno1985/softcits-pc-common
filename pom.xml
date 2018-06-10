@@ -5,7 +5,15 @@
 	<groupId>org.softcits.com</groupId>
 	<artifactId>softcits-pc-common</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<parent>
+		<groupId>org.softcits.com</groupId>
+		<artifactId>softcits-pc-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
 	<dependencies>
+
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
